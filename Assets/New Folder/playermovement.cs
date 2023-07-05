@@ -20,42 +20,45 @@ public class playermovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            anim.enabled = true;
-            anim.SetTrigger("forward");
-        }
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            anim.enabled = true;
-            anim.SetTrigger("backward");
-        }
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            anim.enabled = true;
-            anim.SetTrigger("left");
-        }
-        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            anim.enabled = true;
-            anim.SetTrigger("right");
-        }
-        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))
-        {
-            anim.enabled = false;
-        }
-        if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow))
-        {
-            anim.enabled = false;
-        }
-        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow))
-        {
-            anim.enabled = false;
-        }
-        if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
-        {
-            anim.enabled = false;   
-        }
+        //if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+        //{
+        //    anim.enabled = true;
+        //    anim.SetTrigger("forward");
+        //}
+        //if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+        //{
+        //    anim.enabled = true;
+        //    anim.SetTrigger("backward");
+        //}
+        //if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        //{
+        //    anim.enabled = true;
+        //    anim.SetTrigger("left");
+        //}
+        //if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        //{
+        //    anim.enabled = true;
+        //    anim.SetTrigger("right");
+        //}
+        //if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))
+        //{
+        //    anim.enabled = false;
+        //}
+        //if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow))
+        //{
+        //    anim.enabled = false;
+        //}
+        //if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow))
+        //{
+        //    anim.enabled = false;
+        //}
+        //if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
+        //{
+        //    anim.enabled = false;   
+        //}
+
+        anim.SetFloat();
+
     }
     private void FixedUpdate()
     {
