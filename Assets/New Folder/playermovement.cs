@@ -11,6 +11,8 @@ public class playermovement : MonoBehaviour
     public Vector2 movementInput;
     public Rigidbody2D rigidBody;
     public Animator anim;
+
+    public int coinCounter;
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -54,11 +56,22 @@ public class playermovement : MonoBehaviour
         //}
         //if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
         //{
-        //    anim.enabled = false;   
+        //    anim.enabled = false;
         //}
 
-        anim.SetFloat();
+        anim.SetFloat("Horizontal", movementInput.x);
+        anim.SetFloat("Vertical", movementInput.y);
+        anim.SetFloat("Speed", movementInput.sqrMagnitude);
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Coins"))
+        {
+            coinCounter++;
+            Destroy(collision.gameObject);
+        }
     }
     private void FixedUpdate()
     {
