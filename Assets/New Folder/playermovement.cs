@@ -3,19 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.PlayerLoop;
+using TMPro;
 
 public class playermovement : MonoBehaviour
 {
     // Start is called before the first frame update
     public float moveSpeed;
+    //move ut move it
+    private float baseMoveSpeed;
+
     public Vector2 movementInput;
     public Rigidbody2D rigidBody;
     public Animator anim;
+    public int trapdamage;
+    public TextMeshProUGUI healthPoints, coincounter;
+    public int HPCounter;
+    public int healthPowerupsValue;
+    public int speedPowerupsValue;
+    public int speedDuration;
+
+    
 
     public int coinCounter;
     void Start()
     {
-        rigidBody = GetComponent<Rigidbody2D>();
+
+        baseMoveSpeed = moveSpeed;
+        GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
 
@@ -59,6 +73,9 @@ public class playermovement : MonoBehaviour
         //    anim.enabled = false;
         //}
 
+        healthPoints.text = HPCounter.ToString();
+        coincounter.text = coinCounter.ToString();
+
         anim.SetFloat("Horizontal", movementInput.x);
         anim.SetFloat("Vertical", movementInput.y);
         anim.SetFloat("Speed", movementInput.sqrMagnitude);
@@ -72,6 +89,23 @@ public class playermovement : MonoBehaviour
             coinCounter++;
             Destroy(collision.gameObject);
         }
+        if (collision.CompareTag("Health"))
+        {
+            HPCounter += healthPowerupsValue;
+            Destroy(collision.gameObject);
+        }
+        if (collision.CompareTag("Speed"))
+        {
+            moveSpeed += speedPowerupsValue;
+            Destroy(collision.gameObject);
+            StartCoroutine(returnToBaseSpeed());
+        }
+    }
+
+    IEnumerator returnToBaseSpeed()
+    {
+        yield return new WaitForSeconds(speedDuration);
+        moveSpeed = baseMoveSpeed;
     }
     private void FixedUpdate()
     {
