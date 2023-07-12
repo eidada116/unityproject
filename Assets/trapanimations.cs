@@ -5,7 +5,8 @@ using UnityEngine;
 public class trapanimations : MonoBehaviour
 {
     public Animator anim;
-    public playermovement playermovement;
+    public playermovement playerMovement;
+    public int trapDamage;
     // Start is called before the first frame update
     
     void Start()
@@ -35,6 +36,11 @@ public class trapanimations : MonoBehaviour
         {
             anim.SetBool("isActive", false);
         }
+    }
+
+    public void PlayerDamage()
+    {
+        playerMovement.HPCounter = playerMovement.HPCounter - trapDamage;
     }
 
    

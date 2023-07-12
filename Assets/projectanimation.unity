@@ -2077,6 +2077,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 450281922}
+  playerMovement: {fileID: 0}
+  trapDamage: 0
 --- !u!1 &509333321
 GameObject:
   m_ObjectHideFlags: 0
@@ -2334,6 +2336,9 @@ MonoBehaviour:
   healthPoints: {fileID: 509333323}
   coincounter: {fileID: 0}
   HPCounter: 10
+  healthPowerupsValue: 0
+  speedPowerupsValue: 0
+  speedDuration: 0
   coinCounter: 0
 --- !u!212 &535666361
 SpriteRenderer:
@@ -3484,6 +3489,9 @@ MonoBehaviour:
   healthPoints: {fileID: 509333323}
   coincounter: {fileID: 0}
   HPCounter: 10
+  healthPowerupsValue: 0
+  speedPowerupsValue: 0
+  speedDuration: 0
   coinCounter: 0
 --- !u!1 &1085106427
 GameObject:
@@ -3624,7 +3632,7 @@ GameObject:
   - component: {fileID: 1133583060}
   m_Layer: 0
   m_Name: player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3782,12 +3790,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   movementInput: {x: 0, y: 0}
-  rigidBody: {fileID: 0}
+  rigidBody: {fileID: 1133583055}
   anim: {fileID: 0}
   trapdamage: 0
   healthPoints: {fileID: 509333323}
   coincounter: {fileID: 82009576}
   HPCounter: 100
+  healthPowerupsValue: 0
+  speedPowerupsValue: 0
+  speedDuration: 0
   coinCounter: 0
 --- !u!61 &1133583060
 BoxCollider2D:
@@ -4067,6 +4078,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  playerMovement: {fileID: 1133583059}
+  trapDamage: 20
 --- !u!61 &1309148897
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4213,6 +4226,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  playerMovement: {fileID: 1133583059}
+  trapDamage: 20
 --- !u!61 &1341799216
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5625,6 +5640,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  playerMovement: {fileID: 1133583059}
+  trapDamage: 20
 --- !u!61 &2000790788
 BoxCollider2D:
   m_ObjectHideFlags: 0
